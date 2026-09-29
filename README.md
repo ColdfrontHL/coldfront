@@ -43,7 +43,7 @@ Node 20 or newer. The files here are copied unchanged from the extension's sourc
 
 ## Security reviews
 
-Six review rounds and 157 automated checks, including checks against the live Hyperliquid app. A summary of the latest review is in `SECURITY.md`. To report a problem: security@cold-front.xyz.
+Six internal review rounds and 157 automated checks, including checks against the live Hyperliquid app. Coldfront has not had an independent audit yet. A summary of the latest review is in `SECURITY.md`. To report a problem: security@cold-front.xyz.
 
 ## Licence
 

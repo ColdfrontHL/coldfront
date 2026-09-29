@@ -16,7 +16,9 @@ An API key can place, change and cancel orders. It cannot withdraw, send, transf
 - Trades you did not mean to make: the API key can trade.
 - A fake copy of Coldfront. Install only from the link on https://cold-front.xyz.
 
-## Latest review (round 6, 28 September 2026)
+## Latest internal review (round 6, 28 September 2026)
+
+This is our own review, not an independent audit. No outside security firm has reviewed Coldfront yet.
 
 No critical findings. No finding lets a website, another extension's messages or a network attacker take the API key from the vault, or unlock Coldfront without the passphrase or passkey.
 
