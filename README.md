@@ -2,6 +2,8 @@
 
 Coldfront is a Chrome extension for trading on Hyperliquid from the account your cold wallet holds, without connecting the wallet every time. Your cold wallet signs once to authorize an API key; Coldfront keeps that API key encrypted on your computer and gives it to the official Hyperliquid app while unlocked. Website: https://cold-front.xyz. X: https://x.com/ColdfrontHL.
 
+Hyperliquid's own Enable Trading approval runs out after 14 days, so a cold wallet has to sign again every two weeks. An API wallet you authorize yourself can last up to 180 days, and Coldfront lets the official Hyperliquid app use it. Coldfront is on the Chrome Web Store: https://chromewebstore.google.com/detail/coldfront/ijhlfmhnpbgknhabconhepgdaabaeogg.
+
 This repository publishes the parts of Coldfront that protect your API key, so anyone can check how it is stored and unlocked. It follows the approach hardware-wallet makers such as Ledger use: the security-critical code is public; some product components are not.
 
 ## What is here
