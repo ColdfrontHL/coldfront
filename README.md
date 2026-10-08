@@ -12,7 +12,8 @@ This repository publishes the parts of Coldfront that protect your API key, so a
 |---|---|
 | `lib/vault.js` | The encrypted vault: PBKDF2-SHA256 (600,000 rounds) → AES-256-GCM, a random vault key wrapped once per unlock method, the account fields authenticated as additional data, and a bounded schema check before any cryptography |
 | `lib/passkey.js` | Touch ID (passkey) and security-key unlock through the WebAuthn PRF extension; the PRF output wraps the vault key through HKDF |
-| `lib/eth.js` | Address derivation (secp256k1, keccak-256) used to show and check the API wallet address. It never signs anything |
+| `lib/eth.js` | Address derivation (secp256k1, keccak-256) used to show and check the API wallet address, and the signer (ECDSA with RFC 6979, low-s) that `lib/referral.js` uses |
+| `lib/referral.js` | The only request Coldfront ever signs: "set referral code COLDFRONT on this account", sent to Hyperliquid when you press Apply code in setup. It builds no other action. Its one import, the code's name, comes from a file that is not published |
 | `lib/evict.js` | The rule that decides whether a Hyperliquid tab was really reloaded after a lock |
 | `lib/auth.js` | The authentication epoch: an unlock that started before a lock cannot complete after it |
 | `lib/prefs.js` | Settings and their allowed values |
@@ -41,11 +42,12 @@ Node 20 or newer. The files here are copied unchanged from the extension's sourc
 
 | Version | SHA-256 of the package uploaded to the Chrome Web Store |
 |---|---|
+| 1.0.1 | `00d8f4e7b92cb9dd8b45912ca985879365cac52574650c74af87ce10cd556d39` |
 | 1.0.0 | `e5de31968ea18bd501923730327192de55db507e633be8c9da21328acea0b4e8` |
 
 ## Security reviews
 
-Six internal review rounds and 157 automated checks, including checks against the live Hyperliquid app. Coldfront has not had an independent audit yet. A summary of the latest review is in `SECURITY.md`. To report a problem: security@cold-front.xyz.
+Seven internal review rounds and 168 automated checks, including checks against the live Hyperliquid app. Coldfront has not had an independent audit yet. A summary of the latest review is in `SECURITY.md`. To report a problem: security@cold-front.xyz.
 
 ## Licence
 
